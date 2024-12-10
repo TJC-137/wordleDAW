@@ -1,13 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Souls Loldle</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <h1>Dark Souls Loldle</h1>
+  <p>¡Adivina el personaje basado en sus características!</p>
+
+  <div class="game-container">
+    <div class="input-row">
+      <input type="text" id="inputGuess" placeholder="Introduce tu adivinanza" maxlength="20">
+      <button id="submitGuess">Adivinar</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="attempts">
+      <!-- Aquí se mostrarán los intentos previos -->
+    </div>
+  </div>
+
+  <script src="./src/personajes.js"></script>
+</body>
 </html>
