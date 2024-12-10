@@ -7,22 +7,32 @@
   <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
-  <h1>Dark Souls Loldle</h1>
-  <p>¡Adivina el personaje basado en sus características!</p>
+  <h1>Soulsdle</h1>
+  <p>¡Adivina el personaje basándote en las pistas!</p>
 
-  <div class="game-container">
-    <div class="input-row">
-      <input type="text" id="inputGuess" placeholder="Introduce tu adivinanza" maxlength="20">
+  <div id="game">
+    <div id="categorias" class="pista">
+      <div>Nombre</div>
+      <div>Género</div>
+      <div>Juego</div>
+      <div>Origen</div>
+      <div>Raza</div>
+      <div>Tipo</div>
+    </div>
+    
+    <div id="pistas">
+      <!-- Aquí se mostrarán las pistas de cada intento -->
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="inputGuess" placeholder="Introduce el nombre del personaje" />
       <button id="submitGuess">Adivinar</button>
     </div>
 
-    <div id="result"></div>
-
-    <div id="attempts">
-      <!-- Aquí se mostrarán los intentos previos -->
-    </div>
+    <button id="giveHint" style="margin-top: 20px;">Pedir pista</button>
+    <div id="hint" style="margin-top: 20px; font-weight: bold;"></div>
   </div>
 
-  <script src="./src/personajes.js"></script>
+  <script src="./src/personajes.js" defer></script>
 </body>
 </html>

@@ -1,45 +1,36 @@
-/* style.css */
 body {
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: white;
+  text-align: center;
   margin: 0;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 h1 {
   color: #d4af37;
 }
 
-.game-container {
-  width: 80%;
-  max-width: 500px;
+#game {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-container {
   margin-top: 20px;
 }
 
-.input-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
 input[type="text"] {
-  width: 80%;
   padding: 10px;
-  background-color: #1e1e1e;
-  color: white;
-  border: 1px solid #333;
+  width: 300px;
   border-radius: 5px;
+  border: 1px solid #333;
 }
 
 button {
   padding: 10px 20px;
   background-color: #d4af37;
-  color: #121212;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -49,16 +40,46 @@ button:hover {
   background-color: #e5c16e;
 }
 
-#result {
+#categorias {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
   margin-top: 20px;
-  font-size: 18px;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+#categorias div {
+  text-align: center;
+  padding: 10px;
+}
+
+#pistas {
+  margin-top: 20px;
+}
+
+.pista {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pista div {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
   text-align: center;
 }
 
-#attempts {
-  margin-top: 20px;
+.green {
+  background-color: #2ecc71;
 }
 
-.attempt {
-  margin: 5px 0;
+.yellow {
+  background-color: #f1c40f;
+}
+
+.red {
+  background-color: #e74c3c;
 }
