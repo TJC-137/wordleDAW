@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark Souls Loldle</title>
   <link rel="stylesheet" href="./src/styles.css">
-  <link rel="icon" href="public/images/faviconDS.ico" type="image/x-icon">
+  <link rel="icon" href="/images/faviconDS.ico" type="image/x-icon">
 </head>
 <body>
   <h1>Soulsdle</h1>
   <p>¡Adivina el personaje basándote en las pistas!</p>
-  <!-- Aquí Ramon probando ;) -->
 
   <div id="game">
     <div id="categorias" class="pista">
@@ -21,22 +20,19 @@
       <div>Raza</div>
       <div>Tipo</div>
     </div>
-    
+
     <div id="pistas">
       <!-- Aquí se mostrarán las pistas de cada intento -->
     </div>
 
     <div class="input-container">
-      <!-- Input con funcionalidad de autocompletado -->
       <input 
         type="text" 
         id="inputGuess" 
         placeholder="Introduce el nombre del personaje" 
         list="characterList"
       />
-      <datalist id="characterList">
-        <!-- Aquí se agregarán las opciones dinámicamente -->
-      </datalist>
+      <datalist id="characterList"></datalist>
       <button id="submitGuess">Adivinar</button>
     </div>
 
@@ -44,6 +40,8 @@
     <div id="hint" style="margin-top: 20px; font-weight: bold;"></div>
   </div>
 
-  <script src="./src/personajes.js" defer></script>
+  <script src="./src/characters.js" type="module" defer></script>
+  <script src="./src/uiHandler.js" type="module" defer></script>
+  <script src="./src/gameLogic.js" type="module" defer></script>
 </body>
 </html>
