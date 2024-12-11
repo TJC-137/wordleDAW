@@ -25,7 +25,16 @@
     </div>
 
     <div class="input-container">
-      <input type="text" id="inputGuess" placeholder="Introduce el nombre del personaje" />
+      <!-- Input con funcionalidad de autocompletado -->
+      <input 
+        type="text" 
+        id="inputGuess" 
+        placeholder="Introduce el nombre del personaje" 
+        list="characterList"
+      />
+      <datalist id="characterList">
+        <!-- Aquí se agregarán las opciones dinámicamente -->
+      </datalist>
       <button id="submitGuess">Adivinar</button>
     </div>
 
