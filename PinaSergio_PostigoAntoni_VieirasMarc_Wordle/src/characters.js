@@ -207,15 +207,6 @@ export const characters = [
     affiliation: "The Firekeepers",
   },
   {
-    name: "Gael",
-    game: "Dark Souls 3",
-    origin: "The Painted World of Ariandel",
-    race: "Human",
-    gender: "Male",
-    type: "Boss",
-    affiliation: "The Painted World",
-  },
-  {
     name: "Nameless King",
     game: "Dark Souls 3",
     origin: "Archdragon Peak",
@@ -459,15 +450,6 @@ export const characters = [
     affiliation: "The Painted World",
   },
   {
-    name: "Lothric, Younger Prince",
-    game: "Dark Souls 3",
-    origin: "Lothric Castle",
-    race: "Human",
-    gender: "Male",
-    type: "Boss",
-    affiliation: "Royal Family of Lothric",
-  },
-  {
     name: "Lorian, Elder Prince",
     game: "Dark Souls 3",
     origin: "Lothric Castle",
@@ -700,15 +682,6 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Divinity",
-  },
-  {
-    name: "Velstadt, the Royal Aegis",
-    game: "Dark Souls 2",
-    origin: "Drangleic",
-    race: "Human",
-    gender: "Male",
-    type: "Boss",
-    affiliation: "King Vendrick",
   },
   {
     name: "Alonne Knight Captain",
