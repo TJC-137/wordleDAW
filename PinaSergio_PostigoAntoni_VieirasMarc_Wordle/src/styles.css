@@ -6,6 +6,10 @@
 }
 
 body {
+  display: flex;
+  justify-content: center; /* Centra el nav horizontalmente */
+  flex-direction: column;
+  align-items: center; 
   background-image: url('../public/images/bg/femaleBossesDark.png');
   background-size: cover;
   background-color: #121212;
@@ -25,6 +29,7 @@ h1 {
   display: inline-block;
   text-align: center;
   border: 2px solid #d4af37;
+  margin-bottom: 20px;
 }
 
 
@@ -115,3 +120,61 @@ button:hover {
   background-color: #e74c3c;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espacio entre los elementos */
+  width: 200px; /* Ancho fijo, puedes ajustarlo según tus necesidades */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px; /* Opcional: para darle algo de espacio interior */
+}
+
+nav a {
+  text-decoration: none; /* Opcional: para quitar subrayado en los enlaces */
+  padding: 8px; /* Opcional: para darle espacio a los enlaces */
+  border-radius: 8px; /* Bordes redondeados en los elementos */
+  transition: background-color 0.3s; /* Efecto de transición */
+}
+
+nav a:hover {
+  background-color: #ccc; /* Fondo al pasar el ratón por encima */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#victoryMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(46, 204, 113, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#victoryMessage button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #008000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
