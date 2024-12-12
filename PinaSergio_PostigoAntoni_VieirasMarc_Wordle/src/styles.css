@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'DarkSoulsFont';
-  src: url('../public/fonts/Dark-Soul/OptimusPrinceps.woff2') format('woff2'); /* No la he encontrado en woff (se supone que woff es mejor formato)*/
+  src: url('../public/fonts/Dark-Soul/OptimusPrinceps.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   display: flex;
-  justify-content: center; /* Centra el nav horizontalmente */
+  justify-content: center;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   background-image: url('../public/images/bg/femaleBossesDark.png');
-  background-size: cover;
+
+  background-position: center;
   background-color: #121212;
   color: white;
   text-align: center;
@@ -32,8 +33,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-
-
 #game {
   max-width: 600px;
   margin: 0 auto;
@@ -49,7 +48,12 @@ input[type="text"] {
   border-radius: 5px;
   border: 1px solid #333;
   font-family: 'DarkSoulsFont', Arial, sans-serif;
+  background-color: rgba(18, 18, 18, 0.8);
+  color: white;
+}
 
+input[type="text"]::placeholder {
+  color: #d4af37;
 }
 
 button {
@@ -73,8 +77,8 @@ button:hover {
 #hint {
   font-weight: bold;
   margin-top: 20px;
+  font-size: 1.2em;
 }
-
 
 #categorias {
   display: grid;
@@ -99,6 +103,7 @@ button:hover {
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   margin-top: 10px;
+  align-items: center;
 }
 
 .pista div {
@@ -120,24 +125,32 @@ button:hover {
   background-color: #e74c3c;
 }
 
+.character-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 nav {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Espacio entre los elementos */
-  width: 200px; /* Ancho fijo, puedes ajustarlo según tus necesidades */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 10px; /* Opcional: para darle algo de espacio interior */
+  gap: 12px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 nav a {
-  text-decoration: none; /* Opcional: para quitar subrayado en los enlaces */
-  padding: 8px; /* Opcional: para darle espacio a los enlaces */
-  border-radius: 8px; /* Bordes redondeados en los elementos */
-  transition: background-color 0.3s; /* Efecto de transición */
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 nav a:hover {
-  background-color: #ccc; /* Fondo al pasar el ratón por encima */
+  background-color: #ccc;
 }
 
 @keyframes fadeIn {
@@ -167,6 +180,7 @@ nav a:hover {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  z-index: 1000;
 }
 
 #victoryMessage button {
@@ -177,4 +191,17 @@ nav a:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Añadido para el contenedor de imágenes y texto */
+.pista-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pista-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
 }
