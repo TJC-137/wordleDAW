@@ -63,6 +63,7 @@ document.getElementById("submitGuess").addEventListener("click", () => {
 
       // Deshabilitar el botón después de ganar
       document.getElementById("submitGuess").disabled = true;
+      document.getElementById("giveHint").disabled = true;
     }
   } else {
     alert("Personaje no encontrado. ¡Intenta de nuevo!");
