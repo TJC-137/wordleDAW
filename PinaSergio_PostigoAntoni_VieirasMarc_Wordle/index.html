@@ -9,39 +9,10 @@
 </head>
 <body>
   <h1>Soulsdle</h1>
-  <p>¡Adivina el personaje basándote en las pistas!</p>
-
-  <div id="game">
-    <div id="categorias" class="pista">
-      <div>Nombre</div>
-      <div>Género</div>
-      <div>Juego</div>
-      <div>Origen</div>
-      <div>Raza</div>
-      <div>Tipo</div>
-    </div>
-
-    <div id="pistas">
-      <!-- Aquí se mostrarán las pistas de cada intento -->
-    </div>
-
-    <div class="input-container">
-      <input 
-        type="text" 
-        id="inputGuess" 
-        placeholder="Introduce el nombre del personaje" 
-        list="characterList"
-      />
-      <datalist id="characterList"></datalist>
-      <button id="submitGuess">Adivinar</button>
-    </div>
-
-    <button id="giveHint">Pedir pista</button>
-    <div id="hint"></div>
-  </div>
-
-  <script src="./src/characters.js" type="module" defer></script>
-  <script src="./src/uiHandler.js" type="module" defer></script>
-  <script src="./src/gameLogic.js" type="module" defer></script>
+  <nav>
+    <button onclick="location.href='./src/html/classic.html'">Clásico</button>
+    <button onclick="location.href='modern.html'">Moderno</button>
+    <button onclick="location.href='leaderboard.html'">Tabla de Clasificación</button>
+  </nav>
 </body>
 </html>

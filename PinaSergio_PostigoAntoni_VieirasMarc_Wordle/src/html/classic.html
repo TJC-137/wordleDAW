@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Souls Loldle - Clásico</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="/images/faviconDS.ico" type="image/x-icon">
+</head>
+<body>
+  <h1>Soulsdle</h1>
+  <p>¡Adivina el personaje basándote en las pistas!</p>
+
+    <div class="input-container">
+        <input 
+          type="text" 
+          id="inputGuess" 
+          placeholder="Introduce el nombre del personaje" 
+          list="characterList"
+        />
+        <datalist id="characterList"></datalist>
+        <button id="submitGuess">Adivinar</button>
+      </div>
+
+      <div id="game">
+        <div id="categorias" class="pista">
+          <div>Nombre</div>
+          <div>Género</div>
+          <div>Juego</div>
+          <div>Origen</div>
+          <div>Raza</div>
+          <div>Tipo</div>
+        </div>
+
+        <button id="giveHint">Pedir pista</button>
+        <div id="hint"></div>
+
+    <div id="pistas">
+      <!-- Aquí se mostrarán las pistas de cada intento -->
+    </div>
+    <div id="victoryMessage" class="hidden">
+        <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
+        <button id="closeVictoryMessage">Cerrar</button>
+      </div>
+      
+  </div>
+
+  <script src="../characters.js" type="module" defer></script>
+  <script src="../uiHandler.js" type="module" defer></script>
+  <script src="../gameLogic.js" type="module" defer></script>
+</body>
+</html>
