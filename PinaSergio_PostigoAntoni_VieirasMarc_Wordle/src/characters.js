@@ -7,7 +7,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Knights of Gwyn",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/bNdxWpY/artorias.png",
     characterImage: ""
   },
   {
@@ -18,7 +18,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Hunters of Byrgenwerth",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/6sNhrtn/lady-Maria.png",
     characterImage: ""
   },
   {
@@ -28,7 +28,7 @@ export const characters = [
     race: "Beastman",
     gender: "Male",
     type: "Boss",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/q9KmCPH/maliketh.png",
     characterImage: ""
   },
   {
@@ -39,7 +39,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Lord of Sunlight",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/zVXQyj0/gwyn.png",
     characterImage: ""
   },
   {
@@ -50,7 +50,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Witches of Izalith",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/7r2J7W0/the-Witch-Of-Izalith.png",
     characterImage: ""
   },
   {
@@ -61,7 +61,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "The Gravelord Servants",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/dGTH1K1/nito.png",
     characterImage: ""
   },
   {
@@ -72,7 +72,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Warrior of Sunlight",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/7nd3rY8/solaire-Of-Astora.png",
     characterImage: ""
   },
   {
@@ -83,7 +83,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Knights of Catarina",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/WtHTMyd/siegmeyer-Of-Catarina.png",
     characterImage: ""
   },
   {
@@ -94,7 +94,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "Crow Hunters",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/T22Lx4z/eileen-The-Crow.png",
     characterImage: ""
   },
   {
@@ -105,7 +105,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Hunters",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/RTxwt56/father-Gascoigne.png",
     characterImage: ""
   },
   {
@@ -116,7 +116,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "The Healing Church",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/pZfx093/vicar-Amelia.png",
     characterImage: ""
   },
   {
@@ -127,7 +127,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Hunter",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/9nbc484/gehrman.png",
     characterImage: ""
   },
   {
@@ -138,7 +138,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Mensis",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/cFWrHRQ/micolash.png",
     characterImage: ""
   },
   {
@@ -149,7 +149,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Redmane",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/yS6kLRQ/radahn.png",
     characterImage: ""
   },
   {
@@ -160,7 +160,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Volcano Manor",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/xXhZ1BZ/rykard.png",
     characterImage: ""
   },
   {
@@ -171,7 +171,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Moghwyn Dynasty",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/FgfW0q1/mohg.png",
     characterImage: ""
   },
   {
@@ -182,7 +182,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "House Godrick",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/R02qHgB/godrick-The-Grafted.png",
     characterImage: ""
   },
   {
@@ -193,7 +193,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "The Deathbed Companion",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/x1vHhRF/fia.png",
     characterImage: ""
   },
   {
@@ -204,7 +204,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "The Three Fingers",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/Ht3ZSZs/blaidd.png",
     characterImage: ""
   },
   {
@@ -215,18 +215,18 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/hdQJS4Q/patches.png",
     characterImage: ""
   },
   {
-    name: "Vare",
+    name: "Varre",
     game: "Elden Ring",
     origin: "Liurnia of the Lakes",
     race: "Human",
     gender: "Male",
     type: "NPC",
     affiliation: "Moor",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/G9Y6mMR/varre.png",
     characterImage: ""
   },
   {
@@ -237,7 +237,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "The Hollowed",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/8YNscvc/yuria-Of-Londor.png",
     characterImage: ""
   },
   {
@@ -248,7 +248,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "The Firekeepers",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/LvBFnsX/ludleth-Of-Courland.png",
     characterImage: ""
   },
   {
@@ -259,7 +259,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "The Ancient Dragons",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/dp162Dt/nameless-King.png",
     characterImage: ""
   },
   {
@@ -270,7 +270,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Boreal Knights",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/80CtrH8/pontiff-Sulyvahn.png",
     characterImage: ""
   },
   {
@@ -281,7 +281,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "Fledgling Knight",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/qMnK2cz/anri-Of-Astora.png",
     characterImage: ""
   },
   {
@@ -292,7 +292,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Knights of Catarina",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/t3jMjpt/siegward-Of-Catarina.png",
     characterImage: ""
   },
   {
@@ -303,7 +303,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Ashina",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/0q0XJvN/shura.png",
     characterImage: ""
   },
   {
@@ -314,7 +314,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Ashina Clan",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/tsSJT86/isshin-Ashina.png",
     characterImage: ""
   },
   {
@@ -325,7 +325,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Ashina Clan",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/FhHKQ74/genichiro-Ashina.png",
     characterImage: ""
   },
   {
@@ -336,7 +336,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "Heir to the Dragon",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/HNNVHV8/emma.png",
     characterImage: ""
   },
   {
@@ -347,7 +347,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Shinobi",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/cvqcd0R/sekiro.png",
     characterImage: ""
   },
   {
@@ -358,7 +358,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Hunters",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/yWjnxXq/bloodborne-Hunter.png",
     characterImage: ""
   },
   {
@@ -369,7 +369,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Senpou Temple",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/9cmvggQ/godo.png",
     characterImage: ""
   },
   {
@@ -380,7 +380,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Shinobi",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/6rJFrx9/kuro.png",
     characterImage: ""
   },
   {
@@ -391,7 +391,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Warlord",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/f2KXRNs/oda-Nobunaga.png",
     characterImage: ""
   },
   {
@@ -402,7 +402,7 @@ export const characters = [
     gender: "Varies",
     type: "NPC",
     affiliation: "Varies",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/KKKxbBF/tarnished.png",
     characterImage: ""
   },
   {
@@ -413,7 +413,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "The Healing Church",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/my9DCLn/laurence-The-First-Vicar.png",
     characterImage: ""
   },
   {
@@ -424,7 +424,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Knights of Gwyn",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/pzcxSQF/ornstein.png",
     characterImage: ""
   },
   {
@@ -435,7 +435,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Executioners",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/LNCPffX/smough.png",
     characterImage: ""
   },
   {
@@ -446,7 +446,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Haligtree Knights",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/VH54rcj/malenia.png",
     characterImage: ""
   },
   {
@@ -457,7 +457,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "Carian Royal Family",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/yqZNyLK/ranni-The-Witch.png",
     characterImage: ""
   },
   {
@@ -468,7 +468,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Ashina Clan",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/2Z4Sj9b/Gyoubu.png",
     characterImage: ""
   },
   {
@@ -479,7 +479,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Shinobi",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/Mskrycx/quelaag.png",
     characterImage: ""
   },
   {
@@ -490,7 +490,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/3fyQwJk/Doll.png",
     characterImage: ""
   },
   {
@@ -501,7 +501,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Gods",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/TmxCjnY/midir.png",
     characterImage: ""
   },
   {
@@ -512,7 +512,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Golden Order",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/bb0HNCx/erdtree.png",
     characterImage: ""
   },
   {
@@ -523,7 +523,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Chaos Servants",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/Mskrycx/quelaag.png",
     characterImage: ""
   },
   {
@@ -534,7 +534,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Wolf Blood",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/LxSPsrT/watchers.png",
     characterImage: ""
   },
   {
@@ -545,7 +545,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "The Painted World",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/Hh5Kw3c/Gael.png",
     characterImage: ""
   },
   {
@@ -556,7 +556,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Royal Family of Lothric",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/87rKjXz/Lorian.png",
     characterImage: ""
   },
   {
@@ -567,7 +567,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Great Ones",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/cwZN0D5/Celestial-Emissary.png",
     characterImage: ""
   },
   {
@@ -578,7 +578,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Great Ones",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/VCYJ8dq/Ebrietas.png",
     characterImage: ""
   },
   {
@@ -589,7 +589,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Outer Gods",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/YQqmVxN/Astel.png",
     characterImage: ""
   },
   {
@@ -600,7 +600,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Golden Order",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/3knXpnL/Morgott.png",
     characterImage: ""
   },
   {
@@ -611,7 +611,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Golden Order",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/tPyLtGW/Margit.png",
     characterImage: ""
   },
  
@@ -623,18 +623,18 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/BNmfYXv/Hatred-Demon.png",
     characterImage: ""
   },
   {
-    name: "The Great Grey Wolf Sif",
+    name: "Great Grey Wolf Sif",
     game: "Dark Souls",
     origin: "Darkroot Garden",
     race: "Wolf",
     gender: "Unknown",
     type: "Boss",
     affiliation: "Knights of Gwyn",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/0Mdgxp6/Sif.png",
     characterImage: ""
   },
   {
@@ -645,7 +645,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/Sd13pfc/Priscilla.png",
     characterImage: ""
   },
   {
@@ -656,7 +656,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/QdpKq28/Seath.png",
     characterImage: ""
   },
   {
@@ -667,7 +667,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/vLwyjDf/Iron-Golem.png",
     characterImage: ""
   },
   {
@@ -678,7 +678,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Royal Family of Lothric",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/VCQZXSr/Elder-Prince.png",
     characterImage: ""
   },
   {
@@ -689,7 +689,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/WVQqMsQ/The-Rotten.png",
     characterImage: ""
   },
   {
@@ -700,7 +700,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Dark Souls",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/X8TDgz9/Elana.png",
     characterImage: ""
   },
   {
@@ -711,7 +711,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "King Vendrick",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/zb1DD7j/Velstadt.png",
     characterImage: ""
   },
   {
@@ -733,7 +733,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/vZ7ZQkS/Kalameet.png",
     characterImage: ""
   },
   {
@@ -744,7 +744,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Erdtree",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/cgsF6z6/Elden-Beast.png",
     characterImage: ""
   },
   {
@@ -755,7 +755,7 @@ export const characters = [
     gender: "Female",
     type: "Boss",
     affiliation: "Carian Royals",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/ryZhqN6/Rellana.png",
     characterImage: ""
   },
   {
@@ -766,7 +766,7 @@ export const characters = [
     gender: "Female",
     type: "NPC",
     affiliation: "The Tarnished",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/1spntyB/Melina.png",
     characterImage: ""
   },
   {
@@ -777,7 +777,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Powder Kegs",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/k0jpXcP/Djura.png",
     characterImage: ""
   },
   {
@@ -803,17 +803,6 @@ export const characters = [
     characterImage: ""
   },
   {
-    name: "Gyoubu Masataka Oniwa",
-    game: "Sekiro",
-    origin: "Ashina",
-    race: "Human",
-    gender: "Male",
-    type: "Boss",
-    affiliation: "Ashina Clan",
-    characterIcon: "",
-    characterImage: ""
-  },
-  {
     name: "The Divine Dragon",
     game: "Sekiro",
     origin: "Fountainhead Palace",
@@ -821,7 +810,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "Divinity",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/zs3fVWq/Divine-Dragon.png",
     characterImage: ""
   },
   {
@@ -832,7 +821,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Sir Alonne",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/1vZFzhQ/Alonne-Knight-Captain.jpg",
     characterImage: ""
   },
   {
@@ -843,7 +832,7 @@ export const characters = [
     gender: "Unknown",
     type: "Boss",
     affiliation: "None",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/p1kNFdc/sinh.png",
     characterImage: ""
   },
   {
@@ -854,7 +843,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Deep",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/946z6sP/Aldrich.png",
     characterImage: ""
   },
   {
@@ -865,7 +854,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Lord of Cinder",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/XJ4GZKn/Yhorm.png",
     characterImage: ""
   },
   {
@@ -876,7 +865,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Lothric Castle",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/VLzxbhR/lothric.png",
     characterImage: ""
   },
   {
@@ -887,7 +876,7 @@ export const characters = [
     gender: "Male",
     type: "NPC",
     affiliation: "Pyromancers",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/gRGRG17/Laurentius.png",
     characterImage: ""
   },
   {
@@ -898,7 +887,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Executioners",
-    characterIcon: "",
+    characterIcon: "https://i.ibb.co/7GGHm3d/Logarius.png",
     characterImage: ""
   }
 ];
