@@ -1,3 +1,77 @@
+import artoriasIcon from '../public/images/characterIcons/Artorias.png';
+import aldrichIcon from '../public/images/characterIcons/Aldrich.png';
+import astelIcon from '../public/images/characterIcons/Astel.png';
+import celestialEmisaryIcon from '../public/images/characterIcons/CelestialEmisary.png';
+import divineDragonIcon from '../public/images/characterIcons/divineDragon.png';
+import djuraIcon from '../public/images/characterIcons/Djura.png';
+import dollIcon from '../public/images/characterIcons/Doll.png';
+import ebrietasIcon from '../public/images/characterIcons/Ebrietas.png';
+import elanaIcon from '../public/images/characterIcons/Elana.png';
+import eldenBeastIcon from '../public/images/characterIcons/EldenBeast.png';
+import elderPrinceIcon from '../public/images/characterIcons/ElderPrince.png';
+import erdtreeIcon from '../public/images/characterIcons/erdtree.png';
+import gaelIcon from '../public/images/characterIcons/Gael.png';
+import gyoubuIcon from '../public/images/characterIcons/Gyoubu.png';
+import hatredDemonIcon from '../public/images/characterIcons/HatredDemon.png';
+import ironGolemIcon from '../public/images/characterIcons/IronGolem.png';
+import kalameetIcon from '../public/images/characterIcons/Kalameet.png';
+import ladySekiroIcon from '../public/images/characterIcons/LadySekiro.png';
+import laurentiusIcon from '../public/images/characterIcons/Laurentius.png';
+import logariusIcon from '../public/images/characterIcons/Logarius.png';
+import lorianIcon from '../public/images/characterIcons/Lorian.png';
+import margitIcon from '../public/images/characterIcons/Margit.png';
+import melinaIcon from '../public/images/characterIcons/Melina.png';
+import midirIcon from '../public/images/characterIcons/midir.png';
+import morgottIcon from '../public/images/characterIcons/Morgott.png';
+import priscillaIcon from '../public/images/characterIcons/Priscilla.png';
+import quelaagIcon from '../public/images/characterIcons/Quelaag.png';
+import rellanaIcon from '../public/images/characterIcons/Rellana.png';
+import seathIcon from '../public/images/characterIcons/Seath.png';
+import sifIcon from '../public/images/characterIcons/Sif.png';
+import theRottenIcon from '../public/images/characterIcons/TheRotten.png';
+import velstadtIcon from '../public/images/characterIcons/Velstadt.png';
+import watchersIcon from '../public/images/characterIcons/watchers.png';
+import yhormIcon from '../public/images/characterIcons/Yhorm.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+import Icon from '../public/images/characterIcons/.png';
+
+
+
+
 export const characters = [
   {
     name: "Artorias",
@@ -7,7 +81,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Knights of Gwyn",
-    image: "https://i.pinimg.com/originals/b2/c5/73/b2c573a74607b8dcf7a3c13be9c5cadf.png"
+    image: artoriasImage
   },
   {
     name: "Lady Maria",
@@ -744,3 +818,4 @@ export const characters = [
  
   
 ];
+
