@@ -1,5 +1,7 @@
+import { characters } from './characters.js';
+
 document.addEventListener('DOMContentLoaded', function() {
-    const data = characters; // characters es la variable definida en characters.js
+    const data = characters;
     const gallery = document.getElementById('gallery');
 
     data.forEach(item => {
@@ -41,7 +43,15 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryItem.appendChild(type);
         galleryItem.appendChild(affiliation);
 
+        if (item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = item.name;
+            img.style.width = "100px";
+            img.style.height = "auto";
+            galleryItem.appendChild(img);
+        }
+
         gallery.appendChild(galleryItem);
     });
 });
-
