@@ -506,15 +506,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Golden Order",
   },
-  {
-    name: "Lady Butterfly",
-    game: "Sekiro",
-    origin: "Hirata Estate",
-    race: "Human",
-    gender: "Female",
-    type: "Boss",
-    affiliation: "Shinobi",
-  },
+ 
   {
     name: "Demon of Hatred",
     game: "Sekiro",
@@ -748,15 +740,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Executioners",
-  },
-  {
-    name: "Lady Butterfly",
-    game: "Sekiro",
-    origin: "Hirata Estate",
-    race: "Human",
-    gender: "Female",
-    type: "Boss",
-    affiliation: "Shinobi",
   }
+ 
   
 ];
