@@ -8,7 +8,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Knights of Gwyn",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/YpFHt77/Artorias-Bg.png"
   },
   {
     name: "Lady Maria",
@@ -19,7 +19,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Hunters of Byrgenwerth",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/CKmsgd7/Lady-Maria-Bg.png"
   },
   {
     name: "Maliketh",
@@ -29,7 +29,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/dM0X8XR/Maliketh-Bg.png"
   },
   {
     name: "Gwyn",
@@ -40,7 +40,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Lord of Sunlight",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/h81zb5m/GwynBg.png"
   },
   {
     name: "The Witch of Izalith",
@@ -51,7 +51,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Witches of Izalith",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/NF2zD8h/The-Witch-Of-Izalith-Bg.png"
   },
   {
     name: "Nito",
@@ -62,7 +62,7 @@ export const characters = [
     type: "Boss",
     affiliation: "The Gravelord Servants",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/8DFgP7J/nitoBg.png"
   },
   {
     name: "Solaire of Astora",
@@ -73,7 +73,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Warrior of Sunlight",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/sm0G4MW/Solaire-Of-Astora-Bg.png"
   },
   {
     name: "Siegmeyer of Catarina",
@@ -84,7 +84,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Knights of Catarina",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/pLn1yQr/Siegmeyer-Of-Catarina-Bg.png"
   },
   {
     name: "Eileen the Crow",
@@ -95,7 +95,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Crow Hunters",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/FgY4Z8P/Bloodborne-Hunter-Bg.png"
   },
   {
     name: "Father Gascoigne",
@@ -106,7 +106,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Hunters",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/jJ829Dp/father-Gascoigne-Bg.png"
   },
   {
     name: "Vicar Amelia",
@@ -117,7 +117,7 @@ export const characters = [
     type: "Boss",
     affiliation: "The Healing Church",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/6vSNqC2/Vicar-Amelia-Bg.png"
   },
   {
     name: "Gehrman",
@@ -128,7 +128,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Hunter",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/gPWbLh6/gehrman-Bg.png"
   },
   {
     name: "Micolash",
@@ -139,7 +139,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Mensis",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/j4Gy9sj/Micolash-Bg.png"
   },
   {
     name: "Radahn",
@@ -150,7 +150,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Redmane",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/BL0Bnxn/RadahnBg.png"
   },
   {
     name: "Rykard",
@@ -161,7 +161,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Volcano Manor",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/JdwSSjh/RykardBg.png"
   },
   {
     name: "Mohg",
@@ -172,7 +172,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Moghwyn Dynasty",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/yqw0pty/MohgBg.png"
   },
   {
     name: "Godrick the Grafted",
@@ -183,7 +183,7 @@ export const characters = [
     type: "Boss",
     affiliation: "House Godrick",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/LQjRWkz/Godrick-The-Grafted-Bg.png"
   },
   {
     name: "Fia",
@@ -194,7 +194,7 @@ export const characters = [
     type: "NPC",
     affiliation: "The Deathbed Companion",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/y6rftD3/FiaBg.png"
   },
   {
     name: "Blaidd",
@@ -205,7 +205,7 @@ export const characters = [
     type: "NPC",
     affiliation: "The Three Fingers",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/CMvtkwJ/BlaiddBg.png"
   },
   {
     name: "Patches",
@@ -216,7 +216,7 @@ export const characters = [
     type: "NPC",
     affiliation: "None",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/5W3XMCJ/Patches-Bg.png"
   },
   {
     name: "Vare",
@@ -227,7 +227,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Moor",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/QF4pbdG/VarreBg.png"
   },
   {
     name: "Yuria of Londor",
@@ -238,7 +238,7 @@ export const characters = [
     type: "NPC",
     affiliation: "The Hollowed",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/Qmty0LV/Yuria-Of-Londor-Bg.png"
   },
   {
     name: "Ludleth of Courland",
@@ -249,7 +249,7 @@ export const characters = [
     type: "NPC",
     affiliation: "The Firekeepers",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/gtr9r3t/Ludleth-Of-Courland-Bg.png"
   },
   {
     name: "Nameless King",
@@ -260,7 +260,7 @@ export const characters = [
     type: "Boss",
     affiliation: "The Ancient Dragons",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/x5d9HYS/Nameless-King-Bg.png"
   },
   {
     name: "Pontiff Sulyvahn",
@@ -271,7 +271,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Boreal Knights",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/vcS4QLH/Pontiff-Sulyvahn-Bg.png"
   },
   {
     name: "Anri of Astora",
@@ -282,7 +282,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Fledgling Knight",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/d0nWVR3/Anri-Of-Astora-Bg.png"
   },
   {
     name: "Siegward of Catarina",
@@ -293,7 +293,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Knights of Catarina",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/5WF8WyN/Siegward-Of-Catarina-Bg.png"
   },
   {
     name: "Shura",
@@ -304,7 +304,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Ashina",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/WDLpFbV/ShuraBg.png"
   },
   {
     name: "Isshin Ashina",
@@ -315,7 +315,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Ashina Clan",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/XJ8SH3Z/Isshin-Ashina-Bg.png"
   },
   {
     name: "Genichiro Ashina",
@@ -326,7 +326,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Ashina Clan",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/djVSD8D/Genichiro-Ashina-Bg.png"
   },
   {
     name: "Emma",
@@ -337,7 +337,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Heir to the Dragon",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/dc62JFL/EmmaBg.png"
   },
   {
     name: "Sekiro",
@@ -348,7 +348,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Shinobi",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/1MQkmSH/SekiroBg.png"
   },
   {
     name: "Bloodborne Hunter",
@@ -359,7 +359,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Hunters",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/FgY4Z8P/Bloodborne-Hunter-Bg.png"
   },
   {
     name: "Godo",
@@ -370,7 +370,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Senpou Temple",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/HKX805k/GodoBg.png"
   },
   {
     name: "Kuro",
@@ -381,7 +381,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Shinobi",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/ZJDqtPr/KuroBg.png"
   },
   {
     name: "Oda Nobunaga",
@@ -392,7 +392,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Warlord",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/B42Yf38/Oda-Nobunaga-Bg.png"
   },
   {
     name: "Tarnished",
@@ -403,7 +403,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Varies",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/b2SRPZ0/Tarnished-Bg.png"
   },
   {
     name: "Laurence, the First Vicar",
@@ -414,7 +414,7 @@ export const characters = [
     type: "Boss",
     affiliation: "The Healing Church",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/R3bZ71v/Laurence-The-First-Vicar-Bg.png"
   },
   {
     name: "Ornstein",
@@ -425,7 +425,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Knights of Gwyn",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/4mBHjKq/Ornstein-Bg.png"
   },
   {
     name: "Smough",
@@ -436,7 +436,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Executioners",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/1bXBhhf/SmoughBg.png"
   },
   {
     name: "Malenia",
@@ -447,7 +447,7 @@ export const characters = [
     type: "Boss",
     affiliation: "Haligtree Knights",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/FD5qcg6/Malenia-Bg.png"
   },
   {
     name: "Ranni the Witch",
@@ -458,7 +458,7 @@ export const characters = [
     type: "NPC",
     affiliation: "Carian Royal Family",
     characterIcon: "",
-    characterImage: ""
+    characterImage: "https://i.ibb.co/cDfRjJD/Ranni-The-Witch-Bg.png"
   },
   {
     name: "Gyoubu Masataka Oniwa",
@@ -469,7 +469,8 @@ export const characters = [
     type: "Boss",
     affiliation: "Ashina Clan",
     characterIcon: "",
-    characterImage: "https://i.ibb.co/9vFftdj/GyoubuBG.png"
+    characterImage: "https://i.ibb.co/DpNL3h6/Gyoubu-Masataka-Oniwa-Bg.png"
+
   },
   {
     name: "Lady Butterfly",
@@ -801,17 +802,6 @@ export const characters = [
     affiliation: "Kos",
     characterIcon: "https://i.ibb.co/WGNJm2V/Ophan.png",
     characterImage: "https://i.ibb.co/pWnjkf1/OphanBG.png"
-  },
-  {
-    name: "Gyoubu Masataka Oniwa",
-    game: "Sekiro",
-    origin: "Ashina",
-    race: "Human",
-    gender: "Male",
-    type: "Boss",
-    affiliation: "Ashina Clan",
-    characterIcon: "",
-    characterImage: ""
   },
   {
     name: "The Divine Dragon",
