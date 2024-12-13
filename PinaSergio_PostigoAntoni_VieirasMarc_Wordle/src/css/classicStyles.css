@@ -1,0 +1,97 @@
+#game {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .input-container {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-family: "DarkSoulsFont", Arial, sans-serif;
+    background-color: rgba(18, 18, 18, 0.8);
+    color: white;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #d4af37;
+  }
+  
+  #giveHint {
+    margin-top: 20px;
+  }
+  
+  #hint {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
+  #categorias {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f1c40f;
+  }
+  
+  #categorias div {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .pista {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+  .pista div {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+  
+  .green {
+    background-color: #2ecc71;
+  }
+  
+  .yellow {
+    background-color: #f1c40f;
+  }
+  
+  .red {
+    background-color: #e74c3c;
+  }
+  
+  #victoryMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(46, 204, 113, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  #victoryMessage button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    color: #008000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
