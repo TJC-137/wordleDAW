@@ -38,9 +38,9 @@ window.addEventListener("DOMContentLoaded", () => {
       row.classList.add("pista");
       row.innerHTML = `
         <div class="pista-item">
-          <img src="${guess.image}" alt="${guess.name}" class="character-icon">
-          <span class="${feedback[0]}">${guess.name}</span>
+          <img src="${guess.characterIcon}" alt="${guess.name}" class="character-icon">
         </div>
+
         <div class="${feedback[1]}">${guess.gender}</div>
         <div class="${feedback[2]}">${guess.game}</div>
         <div class="${feedback[3]}">${guess.origin}</div>
