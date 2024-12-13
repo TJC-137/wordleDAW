@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'DarkSoulsFont';
-  src: url('../public/fonts/Dark-Soul/OptimusPrinceps.woff2') format('woff2');
+  font-family: "DarkSoulsFont";
+  src: url("../public/fonts/Dark-Soul/OptimusPrinceps.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -10,7 +10,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url('../public/images/bg/femaleBossesDark.png');
+  background-image: url("../public/images/bg/femaleBossesDark.png");
 
   background-position: center;
   background-color: #121212;
@@ -18,7 +18,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 20px;
-  font-family: 'DarkSoulsFont', Arial, sans-serif;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
 }
 
 h1 {
@@ -47,7 +47,7 @@ input[type="text"] {
   width: 300px;
   border-radius: 5px;
   border: 1px solid #333;
-  font-family: 'DarkSoulsFont', Arial, sans-serif;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
   background-color: rgba(18, 18, 18, 0.8);
   color: white;
 }
@@ -63,7 +63,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'DarkSoulsFont', Arial, sans-serif;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
 }
 
 button:hover {
@@ -204,4 +204,18 @@ nav a:hover {
   width: 80px;
   height: 80px;
   object-fit: cover;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gallery-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
 }
