@@ -1,11 +1,27 @@
-import { compareAttributes, getTarget, incrementAttempts, getAttempts } from './gameLogic.js';
-import { characters } from './characters.js';
+import { fetchTargetCharacter, compareAttributes, getTarget, incrementAttempts, getAttempts } from './gameLogic.js';
 
-window.addEventListener("DOMContentLoaded", () => {
+async function fetchCharacters() {
+  try {
+    const response = await fetch('https://localhost:7003/api/Character');
+    if (!response.ok) {
+      throw new Error('Error fetching characters');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    return [];
+  }
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
   const input = document.getElementById("inputGuess");
   const datalist = document.getElementById("characterList");
 
-  // Escuchar los cambios en el input
+  // Espera a que se carguen los personajes y el objetivo
+  await fetchTargetCharacter();
+  const characters = await fetchCharacters();
+
+  // Ahora puedes manejar la lógica de la UI
   input.addEventListener("input", () => {
     const inputValue = input.value.trim().toLowerCase();
     datalist.innerHTML = "";
@@ -74,7 +90,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("inputGuess").value = "";
   });
   
-
 // Cerrar el mensaje de victoria
 document.getElementById("closeVictoryMessage").addEventListener("click", () => {
   const victoryMessage = document.getElementById("victoryMessage");

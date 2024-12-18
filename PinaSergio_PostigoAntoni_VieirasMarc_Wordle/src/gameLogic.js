@@ -1,9 +1,19 @@
-import { characters } from './characters.js';
-
-let target = characters[Math.floor(Math.random() * characters.length)];
-console.log("Personaje objetivo:", target); // Solo para pruebas
-
+let target;
 let attempts = 0;
+
+export async function fetchTargetCharacter() {
+  try {
+    const response = await fetch('https://localhost:7003/api/Character');
+    if (!response.ok) {
+      throw new Error('Error fetching target character');
+    }
+    const characters = await response.json();
+    target = characters[Math.floor(Math.random() * characters.length)];
+    console.log("Personaje objetivo:", target); // Solo para pruebas
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
 export function compareAttributes(guess, target) {
   const feedback = [];
