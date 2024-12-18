@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Fetch API - General</title>
+</head>
+<body>
+    <h1>Prueba de Fetch API - Obtener Todos los Personajes</h1>
+
+    <button id="fetchButton">Obtener Todos los Personajes</button>
+
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            fetch('https://localhost:7003/api/Character', {
+                method: 'GET', // Método HTTP
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Añadir otros encabezados si es necesario (por ejemplo, para autenticación)
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Mostrar los datos en la página
+                document.getElementById('response').innerHTML = 
+                    `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            })
+            .catch(error => {
+                // Mostrar error en caso de fallo
+                document.getElementById('response').innerHTML = 
+                    `<p style="color: red;">Error: ${error.message}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
