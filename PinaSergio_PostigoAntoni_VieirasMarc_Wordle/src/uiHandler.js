@@ -70,7 +70,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       // Aplicar la animación fade-in al último intento
       setTimeout(() => {
         row.classList.add("fade-in");
-      }, 10); // Un pequeño retraso para que la animación funcione correctamente
+      }, 1); // Un pequeño retraso para que la animación funcione correctamente
   
       if (feedback.every((color) => color === "green")) {
         // Mostrar mensaje de victoria
