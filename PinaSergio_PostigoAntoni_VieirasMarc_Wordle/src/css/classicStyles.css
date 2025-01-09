@@ -47,17 +47,21 @@
   
   .pista {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr); /* Seis columnas iguales */
     gap: 10px;
     margin-top: 10px;
-    align-items: center;
+    align-items: stretch; /* Asegura que los elementos ocupen la altura completa de las filas */
+    grid-auto-rows: 1fr; /* Hace que las filas sean proporcionales */
   }
   
   .pista div {
+    display: flex; /* Usa Flexbox dentro de cada div */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     padding: 10px;
     border-radius: 5px;
     color: white;
-    text-align: center;
+    text-align: center; /* Centra el texto si hay varias líneas */
   }
   
   .green {
@@ -95,3 +99,10 @@
     cursor: pointer;
   }
   
+  .character-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 8%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
