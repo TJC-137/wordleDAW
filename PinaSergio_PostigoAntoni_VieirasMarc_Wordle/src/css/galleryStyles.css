@@ -1,16 +1,229 @@
+@font-face {
+  font-family: "DarkSoulsFont";
+  src: url("../../public/fonts/Dark-Soul/OptimusPrinceps.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../public/images/bg/femaleBossesDark.png");
+
+  background-position: center;
+  background-color: #121212;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
+}
+
+h1 {
+  font-size: xxx-large;
+  background-color: rgba(9, 9, 9, 0.7);
+  color: #d4af37;
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #d4af37;
+  margin-bottom: 20px;
+}
+
+#game {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-container {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
+  background-color: rgba(18, 18, 18, 0.8);
+  color: white;
+}
+
+input[type="text"]::placeholder {
+  color: #d4af37;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "DarkSoulsFont", Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #e5c16e;
+}
+
+#giveHint {
+  margin-top: 20px;
+}
+
+#hint {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+#categorias {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+#categorias div {
+  text-align: center;
+  padding: 10px;
+}
+
+#pistas {
+  margin-top: 20px;
+}
+
+.pista {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.pista div {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.yellow {
+  background-color: #f1c40f;
+}
+
+.red {
+  background-color: #e74c3c;
+}
+
+.character-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #ccc;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#victoryMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(46, 204, 113, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#victoryMessage button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #008000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Añadido para el contenedor de imágenes y texto */
+.pista-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pista-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .gallery-item {
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-  }
-  
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gallery-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+.character-image {
+  width: 200px;  /* Ajusta el ancho según tus necesidades */
+  height: 300px;  /* Ajusta la altura para que todas tengan la misma altura */
+  object-fit: cover;  /* Mantiene la relación de aspecto y recorta la imagen si es necesario */
+  border: 5px solid #d4af37;  /* Borde dorado */
+  border-radius: 15px;  /* Esquinas redondeadas */
+}
