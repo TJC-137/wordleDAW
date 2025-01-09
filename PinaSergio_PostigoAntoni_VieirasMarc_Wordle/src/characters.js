@@ -7,7 +7,7 @@ export const characters = [
     gender: "Male",
     type: "Boss",
     affiliation: "Knights of Gwyn",
-    image: "https://i.pinimg.com/originals/b2/c5/73/b2c573a74607b8dcf7a3c13be9c5cadf.png"
+    image: "https://i.ibb.co/BqcWYyS/eduardo-final-boss.png"
   },
   {
     name: "Lady Maria",
@@ -744,3 +744,4 @@ export const characters = [
  
   
 ];
+

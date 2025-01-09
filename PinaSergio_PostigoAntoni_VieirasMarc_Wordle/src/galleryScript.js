@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryItem.appendChild(type);
         galleryItem.appendChild(affiliation);
 
-        if (item.image) {
+        if (item.imageFullBody) {
             const img = document.createElement('img');
-            img.src = item.image;
+            img.src = item.imageFullBody;
             img.alt = item.name;
             img.style.width = "100px";
             img.style.height = "auto";

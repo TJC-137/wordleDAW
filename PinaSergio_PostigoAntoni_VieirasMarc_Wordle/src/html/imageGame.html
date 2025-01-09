@@ -1,0 +1,237 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el Personaje</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/classicStyles.css">
+  <link rel="icon" href="../../public/icons/faviconDS.ico" type="image/x-icon">
+  <style>
+    /* Estilos para el icono de la imagen que se deberá exportar al css */
+    .character-icon {
+      display: block;
+      margin: auto;
+      width: 150px;
+      /* Cambia esto para ajustar el tamaño de la imagen */
+      height: 150px;
+      /* Cambia esto para ajustar el tamaño de la imagen */
+      object-fit: cover;
+      object-position: 0 0;
+      /* Esto muestra la esquina superior izquierda */
+      clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+      /* Ajusta el área visible */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>¡Adivina el Personaje!</h1>
+  <div id="game-container"></div>
+  <input type="text" id="inputGuess" placeholder="¿Quién es este personaje?">
+  <button id="submitGuess">Adivinar</button>
+
+  <div id="victoryMessage" class="hidden">
+    <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
+    <button id="closeVictoryMessage">Cerrar</button>
+  </div>
+
+  <script type="module">
+    import { characters } from '../characters.js';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const artoriasCharacter = characters.find(char => char.name === "Artorias");
+      const gameContainer = document.getElementById('game-container');
+      const imageElement = document.createElement('img');
+
+      imageElement.src = artoriasCharacter.image;
+      imageElement.alt = 'Guess the character';
+      imageElement.className = 'character-icon';
+
+      gameContainer.appendChild(imageElement);
+
+      const input = document.getElementById('inputGuess');
+      const submitButton = document.getElementById('submitGuess');
+      const victoryMessage = document.getElementById('victoryMessage');
+      const attemptsCount = document.getElementById('attemptsCount');
+      let attempts = 0;
+
+      submitButton.addEventListener('click', () => {
+        attempts++;
+        const guess = input.value.trim().toLowerCase();
+        if (guess === artoriasCharacter.name.toLowerCase()) {
+          attemptsCount.textContent = attempts;
+          victoryMessage.classList.remove('hidden');
+        } else {
+          alert('Incorrecto. Intenta de nuevo.');
+        }
+        input.value = '';
+      });
+
+      document.getElementById('closeVictoryMessage').addEventListener('click', () => {
+        victoryMessage.classList.add('hidden');
+      });
+    });
+  </script> -->
+
+
+
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Personaje</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/classicStyles.css">
+    <link rel="icon" href="../../public/icons/faviconDS.ico" type="image/x-icon">
+    <style>
+      /* Estilos para el icono de la imagen que se deberá exportar al css */
+      .character-icon {
+        display: block;
+        margin: auto;
+        width: 150px;
+        /* Cambia esto para ajustar el tamaño de la imagen */
+        height: 150px;
+        /* Cambia esto para ajustar el tamaño de la imagen */
+        object-fit: cover;
+        object-position: 0 0;
+        /* Esto muestra la esquina superior izquierda */
+        clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+        /* Ajusta el área visible */
+      }
+  
+      .full-character-icon {
+        display: none;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+  
+      #victoryMessage.hidden,
+      #restartButton.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>¡Adivina el Personaje!</h1>
+    <div id="game-container"></div>
+    <input type="text" id="inputGuess" placeholder="¿Quién es este personaje?">
+    <button id="submitGuess">Adivinar</button>
+  
+    <div id="victoryMessage" class="hidden">
+      <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
+      <button id="closeVictoryMessage">Cerrar</button>
+    </div>
+  
+    <button id="restartButton" class="hidden">Volver a empezar</button>
+  
+    <script type="module">
+      import { characters } from '../characters.js';
+  
+      function startGame() {
+        const artoriasCharacter = characters.find(char => char.name === "Artorias");
+        const gameContainer = document.getElementById('game-container');
+        const imageElement = document.createElement('img');
+        const fullImageElement = document.createElement('img');
+  
+        imageElement.src = artoriasCharacter.image;
+        imageElement.alt = 'Guess the character';
+        imageElement.className = 'character-icon';
+  
+        fullImageElement.src = artoriasCharacter.image;
+        fullImageElement.alt = 'Guess the character full';
+        fullImageElement.className = 'full-character-icon';
+  
+        gameContainer.innerHTML = '';
+        gameContainer.appendChild(imageElement);
+        gameContainer.appendChild(fullImageElement);
+  
+        const input = document.getElementById('inputGuess');
+        const submitButton = document.getElementById('submitGuess');
+        const victoryMessage = document.getElementById('victoryMessage');
+        const restartButton = document.getElementById('restartButton');
+        const attemptsCount = document.getElementById('attemptsCount');
+        let attempts = 0;
+  
+        submitButton.addEventListener('click', () => {
+          attempts++;
+          const guess = input.value.trim().toLowerCase();
+          if (guess === artoriasCharacter.name.toLowerCase()) {
+            attemptsCount.textContent = attempts;
+            victoryMessage.classList.remove('hidden');
+            imageElement.style.display = 'none';
+            fullImageElement.style.display = 'block';
+            input.style.display = 'none';
+            submitButton.style.display = 'none';
+            restartButton.classList.remove('hidden');
+          } else {
+            alert('Incorrecto. Intenta de nuevo.');
+          }
+          input.value = '';
+        });
+  
+        document.getElementById('closeVictoryMessage').addEventListener('click', () => {
+          victoryMessage.classList.add('hidden');
+        });
+  
+        restartButton.addEventListener('click', () => {
+          location.reload(); // Recargar la página para reiniciar el juego
+        });
+      }
+  
+      window.addEventListener('DOMContentLoaded', startGame);
+    </script>
+  </body>
+  
+  </html>
+  
+
+
+
+
+
+  <!-- 
+
+  ESTE SCRIPT NO ES EL DE PRUEBA
+
+  <script type="module">
+    import { characters } from '../characters.js';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
+      const gameContainer = document.getElementById('game-container');
+      const imageElement = document.createElement('img');
+
+      imageElement.src = randomCharacter.image;
+      imageElement.alt = 'Guess the character';
+      imageElement.className = 'character-icon';
+
+      gameContainer.appendChild(imageElement);
+
+      const input = document.getElementById('inputGuess');
+      const submitButton = document.getElementById('submitGuess');
+
+      submitButton.addEventListener('click', () => {
+        const guess = input.value.trim().toLowerCase();
+        if (guess === randomCharacter.name.toLowerCase()) {
+          alert('¡Correcto! Has adivinado el personaje.');
+        } else {
+          alert('Incorrecto. Intenta de nuevo.');
+        }
+        input.value = '';
+      });
+    });
+  </script> 
+</body>
+
+</html>
+-->
