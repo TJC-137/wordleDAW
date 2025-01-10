@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el Personaje</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/classicStyles.css">
+  <link rel="icon" href="../../public/icons/faviconDS.ico" type="image/x-icon">
+  <style>
+    /* Contenedor general de la imagen */
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      overflow: hidden; /* Oculta las partes que están fuera del contenedor */
+    }
+
+    /* Imagen recortada, cambiará el clip-path para mostrar distintas secciones */
+    .image-part {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: clip-path 0.5s ease;
+    }
+
+    /* Estilos para el contenedor y los botones */
+    #victoryMessage.hidden,
+    #restartButton.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Adivina el Personaje!</h1>
+  <div id="game-container"></div>
+  <input type="text" id="inputGuess" placeholder="¿Quién es este personaje?">
+  <button id="submitGuess">Adivinar</button>
+
+  <div id="victoryMessage" class="hidden">
+    <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
+    <button id="closeVictoryMessage">Cerrar</button>
+  </div>
+
+  <button id="restartButton" class="hidden">Volver a empezar</button>
+
+  <!-- Botón para cambiar la parte de la imagen -->
+  <button id="changeImagePart">Mostrar otra parte</button>
+
+  <script type="module">
+    // Obtener los personajes desde la API
+    async function startGame() {
+      try {
+        const response = await fetch("https://localhost:7003/api/Character");
+        if (!response.ok) {
+          throw new Error("Error al obtener los datos");
+        }
+        const data = await response.json();  // Datos de la API
+
+        // Elegir un personaje aleatorio para el juego
+        const randomCharacter = data[Math.floor(Math.random() * data.length)];
+        
+        const gameContainer = document.getElementById('game-container');
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+        
+        const imageElement = document.createElement('img');
+        imageElement.src = randomCharacter.characterImage; // URL de la imagen
+        imageElement.alt = 'Guess the character';
+        imageElement.className = 'image-part';
+
+        // Limpiar el contenedor de la galería y agregar la imagen
+        gameContainer.innerHTML = '';
+        imageContainer.appendChild(imageElement);
+        gameContainer.appendChild(imageContainer);
+
+        const input = document.getElementById('inputGuess');
+        const submitButton = document.getElementById('submitGuess');
+        const victoryMessage = document.getElementById('victoryMessage');
+        const restartButton = document.getElementById('restartButton');
+        const attemptsCount = document.getElementById('attemptsCount');
+        let attempts = 0;
+
+        // Definir diferentes "zonas" de la imagen (recortes)
+        const imageParts = [
+          { clip: 'polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%)' }, // Parte superior
+          { clip: 'polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%)' }, // Parte inferior
+          { clip: 'polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%)' }, // Parte izquierda
+          { clip: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)' } // Parte derecha
+        ];
+
+        let currentPart = 0;
+
+        // Cambiar la parte de la imagen
+        function changeImagePart() {
+          currentPart = (currentPart + 1) % imageParts.length;
+          const part = imageParts[currentPart];
+          imageElement.style.clipPath = part.clip; // Cambiar el clip-path
+        }
+
+        // Lógica para adivinar el personaje
+        submitButton.addEventListener('click', () => {
+          attempts++;
+          const guess = input.value.trim().toLowerCase();
+          if (guess === randomCharacter.name.toLowerCase()) {
+            attemptsCount.textContent = attempts;
+            victoryMessage.classList.remove('hidden');
+            input.style.display = 'none';
+            submitButton.style.display = 'none';
+            restartButton.classList.remove('hidden');
+          } else {
+            alert('Incorrecto. Intenta de nuevo.');
+          }
+          input.value = '';
+        });
+
+        // Cerrar mensaje de victoria
+        document.getElementById('closeVictoryMessage').addEventListener('click', () => {
+          victoryMessage.classList.add('hidden');
+        });
+
+        // Volver a empezar
+        restartButton.addEventListener('click', () => {
+          location.reload(); // Recargar la página para reiniciar el juego
+        });
+
+        // Cambiar la parte de la imagen cuando se hace clic en el botón
+        document.getElementById('changeImagePart').addEventListener('click', changeImagePart);
+
+      } catch (error) {
+        console.error("Hubo un problema con la solicitud fetch:", error);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', startGame);
+  </script>
+</body>
+</html>
