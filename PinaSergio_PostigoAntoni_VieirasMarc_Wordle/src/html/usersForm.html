@@ -5,7 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario de Registro</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" href="../../public/icons/faviconDS.ico" type="image/x-icon">
+  <style>
+    .form-container {
+      background-color: rgba(9, 9, 9, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 500px;
+      margin: 20px;
+      border: 2px solid #d4af37;
+    }
+    h2 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+      font-family: "DarkSoulsFont", Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #d4af37;
+      font-family: "DarkSoulsFont", Arial, sans-serif;
+    }
+    input, select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #d4af37;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #121212;
+      color: white;
+      font-family: "DarkSoulsFont", Arial, sans-serif;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+    .form-button {
+      background-color: #d4af37;
+      color: black;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      font-family: "DarkSoulsFont", Arial, sans-serif;
+    }
+    .form-button:hover {
+      background-color: #e5c16e;
+    }
+    #message {
+      margin-top: 20px;
+      text-align: center;
+      color: #d4af37;
+      font-family: "DarkSoulsFont", Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
   <div class="form-container fade-in">
@@ -66,7 +128,7 @@
           <option value="Otro2">Otro 2</option>
         </select>
       </div>
-      <button type="submit">Crear Usuario</button>
+      <button type="submit" class="form-button">Crear Usuario</button>
     </form>
     <div id="message"></div>
   </div>

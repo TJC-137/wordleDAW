@@ -107,7 +107,7 @@
   input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
   }
-  button {
+  .form-button {
     background-color: #d4af37;
     color: black;
     padding: 10px 15px;
@@ -118,7 +118,7 @@
     width: 100%;
     font-family: "DarkSoulsFont", Arial, sans-serif;
   }
-  button:hover {
+  .form-button:hover {
     background-color: #e5c16e;
   }
   #message {
