@@ -21,6 +21,26 @@ body {
   font-family: "DarkSoulsFont", Arial, sans-serif;
 }
 
+/* Personalización de la barra de scroll */
+#characterSuggestions::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra */
+}
+
+#characterSuggestions::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.3); /* Fondo de la pista */
+  border-radius: 5px;
+}
+
+#characterSuggestions::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+  border-radius: 5px;
+}
+
+#characterSuggestions::-webkit-scrollbar-thumb:hover {
+  background: #d4af37; 
+  cursor: pointer;
+}
+
 h1 {
   font-size: xxx-large;
   background-color: rgba(9, 9, 9, 0.7);
