@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver JSON de la API</title>
+</head>
+<body>
+    <h2>Ver JSON de la API</h2>
+    <button id="fetchDataButton">Obtener Datos</button>
+    <pre id="jsonData"></pre>
+
+    <script>
+        document.getElementById('fetchDataButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('https://localhost:7249/api/User'); // Asegúrate de que esta URL sea correcta
+                if (!response.ok) {
+                    throw new Error('Error al obtener los datos del servidor');
+                }
+
+                // Parsear la respuesta como JSON
+                const data = await response.json();
+                console.log(data); // Ver en consola
+
+                // Mostrar el JSON en el HTML
+                document.getElementById('jsonData').textContent = JSON.stringify(data, null, 2);
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('jsonData').textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
