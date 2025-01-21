@@ -9,16 +9,6 @@ document.addEventListener('DOMContentLoaded', async function() {
       return;
   }
 
-  // Función para encriptar contraseña usando Web Crypto API
-  async function encryptPassword(password) {
-      const encoder = new TextEncoder();
-      const data = encoder.encode(password);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-      return hashHex;
-  }
-
   // Probar la conexión con la API al cargar
   try {
       const testResponse = await fetch('https://localhost:7249/api/User');
@@ -39,8 +29,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
-
-      console.log('Intentando login con email:', email);
 
       // Limpiar mensajes anteriores
       loginMessage.textContent = '';
@@ -67,42 +55,19 @@ document.addEventListener('DOMContentLoaded', async function() {
           const users = await getUsersResponse.json();
           console.log('Usuarios disponibles:', users);
 
-          // Buscar el usuario que coincida con email
-          const user = users.find(u => u.email === email);
-          
-          if (user) {
-              console.log('Usuario encontrado:', user);
-              
-              // Intentar primero con contraseña sin encriptar
-              let isValidPassword = password === user.password;
-              
-              // Si no coincide, intentar con contraseña encriptada
-              if (!isValidPassword) {
-                  const hashedPassword = await encryptPassword(password);
-                  // Comparar solo los primeros caracteres que coincidan con la longitud de la contraseña almacenada
-                  isValidPassword = hashedPassword.substring(0, user.password.length) === user.password;
-                  
-                  console.log('Contraseña ingresada (encriptada):', hashedPassword);
-                  console.log('Contraseña almacenada:', user.password);
-                  console.log('Comparando los primeros', user.password.length, 'caracteres');
-                  console.log('¿Coinciden las contraseñas?', isValidPassword);
-              }
+          // Buscar el usuario que coincida
+          const user = users.find(u => u.email === email && u.password === password);
 
-              if (isValidPassword) {
-                  loginMessage.textContent = `¡Bienvenido ${user.userName}!`;
-                  loginMessage.classList.add('success');
-                  console.log('Login exitoso. Datos del usuario:', {
-                      nombre: user.userName,
-                      rango: user.rankName,
-                      monedas: user.soulsCoin
-                  });
-              } else {
-                  loginMessage.textContent = 'Usuario o contraseña incorrectos.';
-                  loginMessage.classList.add('error');
-              }
+          if (user) {
+              loginMessage.textContent = `¡Bienvenido ${user.userName}!`;
+              loginMessage.classList.add('success');
+              console.log('Datos del usuario:', {
+                  nombre: user.userName,
+                  rango: user.rankName,
+                  monedas: user.soulsCoin
+              });
           } else {
-              console.log('No se encontró usuario con el email:', email);
-              loginMessage.textContent = 'Usuario no encontrado.';
+              loginMessage.textContent = 'Usuario o contraseña incorrectos.';
               loginMessage.classList.add('error');
           }
       } catch (error) {
