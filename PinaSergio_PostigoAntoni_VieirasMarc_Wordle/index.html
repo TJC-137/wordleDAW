@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark Souls Loldle</title>
   <link rel="stylesheet" href="./src/css/styles.css">
-  <link rel="stylesheet" href="./src/css/indexStyles.css">
+  <!-- <link rel="stylesheet" href="./src/css/indexStyles.css"> -->
   <link rel="icon" href="./public/icons/faviconDS.ico" type="image/x-icon">
+  <style>
+  </style>
 </head>
 <body>
   <h1>Soulsdle</h1>
   <nav>
     <button onclick="location.href='./src/html/classic.html'">Clásico</button>
-    <button onclick="location.href='./src/html/pruebaAPI.html'">PruebaApi</button>
-    <button onclick="location.href='./src/html/usersForm.html'">UserForm</button>
     <button onclick="location.href='./src/html/Gallery.html'">Galería de Personajes</button>
     <button onclick="location.href='./src/html/imageGame.html'">Adivina el Personaje</button>
     <button onclick="location.href='./src/html/fightGame.html'">Juego de lucha</button>
-    <button onclick="location.href='./src/html/login.html'">Login</button>
+    <button onclick="location.href='./src/html/pruebaAPI.html'">PruebaApi</button>
 
   </nav>
+
+  <!-- Login desplegable -->
+  <div class="login-container" id="loginContainer">
+    <img src="./public/icons/usuario.png" alt="Login Icon">
+    <div id="loginForm" class="hidden">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="form-button">Iniciar sesión</button>
+      </form>
+      <div id="loginMessage" class="message"></div>
+      <button onclick="location.href='./src/html/usersForm.html'" class="form-button">Registrarse</button>
+    </div>
+  </div>
+
+  <script>
+    const loginContainer = document.getElementById("loginContainer");
+    const loginForm = document.getElementById("loginForm");
+
+    // Toggle the login form when the login container is clicked
+    loginContainer.addEventListener("click", (event) => {
+      const isExpanded = loginContainer.classList.contains("expanded");
+      loginContainer.classList.toggle("expanded");
+      loginForm.classList.toggle("hidden", isExpanded);
+    });
+
+    // Prevent the login form from closing when clicking inside it
+    loginForm.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    // Close the login form if clicking outside of the login container
+    document.addEventListener("click", (event) => {
+      if (!loginContainer.contains(event.target)) {
+        if (loginContainer.classList.contains("expanded")) {
+          loginContainer.classList.remove("expanded");
+          loginForm.classList.add("hidden");
+        }
+      }
+    });
+  </script>
+
+  <!-- JavaScript para el login -->
+  <script src="./login.js"></script>
 </body>
 </html>
