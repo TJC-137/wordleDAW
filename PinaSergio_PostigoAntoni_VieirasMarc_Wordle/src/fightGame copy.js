@@ -308,37 +308,37 @@ function updateBars() {
 }
 
 // Modificación en `gameOver` para mostrar imagen y mensaje final
-// function gameOver(playerWins) {
-//     isGameOver = true;
+function gameOver(playerWins) {
+    isGameOver = true;
 
-//     // Mostrar mensaje y pantalla final
-//     const winnerMessage = playerWins ? "¡HAS GANADO!" : "¡HAS SIDO DERROTADO!";
-//     showMessage(winnerMessage);
+    // Mostrar mensaje y pantalla final
+    const winnerMessage = playerWins ? "¡HAS GANADO!" : "¡HAS SIDO DERROTADO!";
+    showMessage(winnerMessage);
 
-//     // Crear pantalla final
-//     const endScreen = document.createElement('div');
-//     endScreen.className = 'end-screen';
+    // Crear pantalla final
+    const endScreen = document.createElement('div');
+    endScreen.className = 'end-screen';
 
-//     const winnerImage = document.createElement('img');
-//     winnerImage.src = playerWins ? selectedCharacter.characterImage : selectedEnemy.characterImage;
-//     winnerImage.alt = playerWins ? selectedCharacter.name : selectedEnemy.name;
+    const winnerImage = document.createElement('img');
+    winnerImage.src = playerWins ? selectedCharacter.characterImage : selectedEnemy.characterImage;
+    winnerImage.alt = playerWins ? selectedCharacter.name : selectedEnemy.name;
 
-//     const finalMessage = document.createElement('h1');
-//     finalMessage.textContent = winnerMessage;
+    const finalMessage = document.createElement('h1');
+    finalMessage.textContent = winnerMessage;
 
-//     endScreen.appendChild(winnerImage);
-//     endScreen.appendChild(finalMessage);
+    endScreen.appendChild(winnerImage);
+    endScreen.appendChild(finalMessage);
 
-//     document.body.appendChild(endScreen);
+    document.body.appendChild(endScreen);
 
-//     // Hacer visible el botón de reinicio
-//     restartBtn.classList.remove('hidden');
+    // Hacer visible el botón de reinicio
+    restartBtn.classList.remove('hidden');
 
-//     // Deshabilitar los controles
-//     document.querySelectorAll('.controls button').forEach(btn => {
-//         btn.disabled = true;
-//     });
-// }
+    // Deshabilitar los controles
+    document.querySelectorAll('.controls button').forEach(btn => {
+        btn.disabled = true;
+    });
+}
 
 // Función para reiniciar el juego
 // Restablecer juego con limpieza de la pantalla final
