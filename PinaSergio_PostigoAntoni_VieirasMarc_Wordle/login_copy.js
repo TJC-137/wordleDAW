@@ -3,60 +3,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const loginMessage = document.getElementById('loginMessage');
-    const loginIcon = document.querySelector('.login-container img');
-    const logoutButton = document.getElementById('logoutButton');
-    const loginContainer = document.querySelector('.login-container');
-
-    // Ocultar el botón de logout inicialmente
-    logoutButton.style.display = 'none';
 
     if (!loginForm || !emailInput || !passwordInput || !loginMessage) {
         console.error('No se encontraron elementos necesarios del formulario');
         return;
     }
 
-    // Función para actualizar la UI basada en el estado de login
-    function updateUIFromLoginState() {
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        if (userData) {
-            console.log('Usuario encontrado en localStorage:', userData.userName);
-            loginIcon.style.display = 'none';
-            
-            // Eliminar nombre de usuario existente si lo hay
-            const existingUserName = loginContainer.querySelector('.user-name');
-            if (existingUserName) {
-                existingUserName.remove();
-            }
-            
-            // Crear y mostrar el nombre de usuario
-            const userNameElement = document.createElement('span');
-            userNameElement.textContent = userData.userName;
-            userNameElement.className = 'user-name';
-            loginContainer.insertBefore(userNameElement, loginIcon);
-            
-            // Ocultar el formulario y mostrar el botón de logout
-            if (document.querySelector('form')) {
-                document.querySelector('form').style.display = 'none';
-            }
-            logoutButton.style.display = 'block';
-        }
-    }
-
-    // Verificar estado de login al cargar la página
-    updateUIFromLoginState();
-
-    // Manejar la visibilidad del nombre de usuario cuando el menú se despliega/cierra
-    loginContainer.addEventListener('click', function() {
-        const userNameElement = loginContainer.querySelector('.user-name');
-        if (userNameElement) {
-            if (loginContainer.classList.contains('expanded')) {
-                userNameElement.style.display = 'none';
-            } else {
-                userNameElement.style.display = 'block';
-            }
-        }
-    });
-
+    // Función para encriptar contraseña usando Web Crypto API
     async function encryptPassword(password) {
         const encoder = new TextEncoder();
         const data = encoder.encode(password);
@@ -66,28 +19,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         return hashHex;
     }
 
-    // Función para manejar el logout
-    function handleLogout() {
-        console.log('Cerrando sesión...');
-        
-        // Limpiar localStorage
-        localStorage.removeItem('userData');
-        
-        // Mostrar mensaje de cierre de sesión
-        loginMessage.textContent = 'Sesión cerrada correctamente';
-        loginMessage.className = 'message success';
-        
-        // Recargar la página después de un breve delay para mostrar el mensaje
-        setTimeout(() => {
-            location.reload();
-        }, 1000);
-
-        console.log('Sesión cerrada exitosamente');
-    }
-
-    // Agregar evento al botón de logout
-    logoutButton.addEventListener('click', handleLogout);
-
+    // Probar la conexión con la API al cargar
     try {
         const testResponse = await fetch('https://localhost:7249/api/User');
         if (!testResponse.ok) {
@@ -110,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         console.log('Intentando login con email:', email);
 
+        // Limpiar mensajes anteriores
         loginMessage.textContent = '';
         loginMessage.className = 'message';
 
@@ -125,52 +58,80 @@ document.addEventListener('DOMContentLoaded', async function() {
         submitButton.textContent = 'Iniciando sesión...';
 
         try {
+            // Primero obtener todos los usuarios
             const getUsersResponse = await fetch('https://localhost:7249/api/User');
             if (!getUsersResponse.ok) {
                 throw new Error('Error al obtener datos de usuarios');
             }
 
             const users = await getUsersResponse.json();
+            console.log('Usuarios disponibles:', users);
+
+            // Buscar el usuario que coincida con email
             const user = users.find(u => u.email === email);
             
             if (user) {
                 console.log('Usuario encontrado:', user);
                 
+                // Intentar primero con contraseña sin encriptar
                 let isValidPassword = password === user.password;
                 
+                // Si no coincide, intentar con contraseña encriptada
                 if (!isValidPassword) {
                     const hashedPassword = await encryptPassword(password);
+                    // Comparar solo los primeros caracteres que coincidan con la longitud de la contraseña almacenada
                     isValidPassword = hashedPassword.substring(0, user.password.length) === user.password;
+                    
+                    console.log('Contraseña ingresada (encriptada):', hashedPassword);
+                    console.log('Contraseña almacenada:', user.password);
+                    console.log('Comparando los primeros', user.password.length, 'caracteres');
+                    console.log('¿Coinciden las contraseñas?', isValidPassword);
                 }
 
                 if (isValidPassword) {
-                    // Guardar datos del usuario en localStorage
-                    localStorage.setItem('userData', JSON.stringify({
-                        userName: user.userName,
-                        email: user.email
-                    }));
-
-                    // Ocultar la imagen y mostrar el nombre del usuario
-                    loginIcon.style.display = 'none';
-                    const userNameElement = document.createElement('span');
-                    userNameElement.textContent = user.userName;
-                    userNameElement.className = 'user-name';
-                    loginContainer.insertBefore(userNameElement, loginIcon);
-                    
-                    // Ocultar el formulario de login
-                    document.querySelector('form').style.display = 'none';
-                    
-                    // Mostrar el botón de logout
-                    logoutButton.style.display = 'block';
-                    
-                    // Cerrar el menú desplegable
-                    loginContainer.classList.remove('expanded');
-                    loginForm.classList.add('hidden');
-                    
                     loginMessage.textContent = `¡Bienvenido ${user.userName}!`;
                     loginMessage.classList.add('success');
+                    console.log('Login exitoso. Datos del usuario:', {
+                        nombre: user.userName,
+                        rango: user.rankName,
+                        monedas: user.soulsCoin
+                    });
 
-                    console.log('Login exitoso para el usuario:', user.userName);
+                    // Aquí es donde se actualizan las monedas del usuario
+                    const url = `https://localhost:7249/api/User/${user.userId}`;  // URL con el userId
+
+                    // El cuerpo de la solicitud con la actualización de las monedas
+                    const requestData = {
+                        ...user,  // Usamos los datos actuales del usuario
+                        soulsCoin: user.soulsCoin + 10  // Añadimos las 10 monedas
+                    };
+
+                    try {
+                        const updateResponse = await fetch(url, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(requestData),  // Convertimos el objeto a JSON
+                        });
+
+                        if (!updateResponse.ok) {
+                            const errorText = await updateResponse.text();  // Obtenemos la respuesta como texto
+                            console.error('Error al actualizar las monedas:', errorText);
+                            loginMessage.textContent = 'Error al actualizar las monedas. Verifica los datos.';
+                            loginMessage.classList.add('error');
+                        } else {
+                            const updatedUser = await updateResponse.json();  // Obtenemos la respuesta JSON
+                            loginMessage.textContent = `Monedas actualizadas. Ahora tienes ${updatedUser.soulsCoin} monedas.`;
+                            loginMessage.classList.add('success');
+                            console.log('Monedas actualizadas:', updatedUser);
+                        }
+                    } catch (error) {
+                        console.error('Error al actualizar las monedas:', error);
+                        loginMessage.textContent = 'Hubo un error al procesar la solicitud.';
+                        loginMessage.classList.add('error');
+                    }
+
                 } else {
                     loginMessage.textContent = 'Usuario o contraseña incorrectos.';
                     loginMessage.classList.add('error');

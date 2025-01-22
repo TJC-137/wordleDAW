@@ -345,3 +345,8 @@ table tr:nth-child(odd) {
 table tr:hover {
   background-color: #ffeeba; /* Fondo dorado claro al pasar el ratón */
 }
+
+#logoutButton {
+  margin-top: 20px; /* Espacio superior para separar el botón logout del resto */
+  display: block;  /* Asegura que el botón ocupa toda la fila */
+}
