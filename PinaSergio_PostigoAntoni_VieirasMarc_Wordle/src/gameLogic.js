@@ -1,6 +1,8 @@
 let target;
 let attempts = 0;
 
+console.log(localStorage.getItem('userData'));
+
 export async function fetchTargetCharacter() {
   try {
     const response = await fetch('https://localhost:7003/api/Character');
@@ -39,3 +41,4 @@ export function incrementAttempts() {
 export function getAttempts() {
   return attempts;
 }
+
