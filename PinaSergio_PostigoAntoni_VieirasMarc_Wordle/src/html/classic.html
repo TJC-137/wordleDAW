@@ -14,46 +14,46 @@
   <h1>Soulsdle</h1>
   <p>¡Adivina el personaje basándote en las pistas!</p>
 
-    <div class="input-container">
-        <input 
-          type="text" 
-          id="inputGuess" 
-          placeholder="Introduce el nombre del personaje" 
-          list="characterList"
-        />
-        <datalist id="characterList"></datalist>
-        <button id="submitGuess">Adivinar</button>
-      </div>
+  <div class="input-container">
+    <input 
+      type="text" 
+      id="inputGuess" 
+      placeholder="Introduce el nombre del personaje" 
+      list="characterList"
+    />
+    <datalist id="characterList"></datalist>
+    <button id="submitGuess">Adivinar</button>
+  </div>
 
-        <button id="giveHint">Pedir pista</button>
-        <div id="hint"></div>
+  <button id="giveHint">Pedir pista</button>
+  <div id="hint"></div>
 
-        <div id="game">
-            <div id="categorias" class="pista">
-              <div>Icono</div>
-              <div>Género</div>
-              <div>Juego</div>
-              <div>Origen</div>
-              <div>Raza</div>
-              <div>Tipo</div>
-            </div>
-            
+  <div id="game">
+    <div id="categorias" class="pista">
+      <div>Icono</div>
+      <div>Género</div>
+      <div>Juego</div>
+      <div>Origen</div>
+      <div>Raza</div>
+      <div>Tipo</div>
+    </div>
+        
     <div id="pistas">
       <!-- Aquí se mostrarán las pistas de cada intento -->
     </div>
     <div id="victoryMessage" class="hidden">
-        <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
-        <button id="closeVictoryMessage">Cerrar</button>
-      </div>
-      
+      <p>¡Correcto! Has adivinado al personaje en <span id="attemptsCount"></span> intentos.</p>
+      <button id="closeVictoryMessage">Cerrar</button>
+    </div>
   </div>
 
-  <script src="../characters.js" type="module" defer></script>
-  <script src="../uiHandler.js" type="module" defer></script>
-  <script src="../gameLogic.js" type="module" defer></script>
-
-  <script src="../menu.js" type="module" defer></script>
-  <script src="../../login.js" type="module" defer></script>
-
+  <!-- Primero cargamos el menú -->
+  <script src="../menu.js"></script>
+  <!-- Después cargamos el login -->
+  <script src="../../login.js"></script>
+  <!-- Finalmente cargamos los scripts del juego -->
+  <script src="../characters.js" type="module"></script>
+  <script src="../uiHandler.js" type="module"></script>
+  <script src="../gameLogic.js" type="module"></script>
 </body>
 </html>

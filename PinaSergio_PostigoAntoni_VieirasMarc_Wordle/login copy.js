@@ -4,52 +4,59 @@ document.addEventListener('DOMContentLoaded', async function() {
     const passwordInput = document.getElementById('password');
     const loginMessage = document.getElementById('loginMessage');
     const loginIcon = document.querySelector('.login-container img');
-    const loginContainer = document.querySelector('.login-container');
     const logoutButton = document.getElementById('logoutButton');
+    const loginContainer = document.querySelector('.login-container');
 
-    if (!loginForm || !emailInput || !passwordInput || !loginMessage || !loginContainer || !loginIcon) {
+    // Ocultar el botón de logout inicialmente
+    logoutButton.style.display = 'none';
+
+    if (!loginForm || !emailInput || !passwordInput || !loginMessage) {
         console.error('No se encontraron elementos necesarios del formulario');
         return;
     }
 
-    // Función para actualizar la UI basada en el estado del login
+    // Función para actualizar la UI basada en el estado de login
     function updateUIFromLoginState() {
-        const userDataStr = localStorage.getItem('userData');
-        
-        // Si no hay usuario logueado, ocultar el botón de cerrar sesión
-        if (!userDataStr) {
-            if (logoutButton) {
-                logoutButton.style.display = 'none';
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (userData) {
+            console.log('Usuario encontrado en localStorage:', userData.userName);
+            loginIcon.style.display = 'none';
+            
+            // Eliminar nombre de usuario existente si lo hay
+            const existingUserName = loginContainer.querySelector('.user-name');
+            if (existingUserName) {
+                existingUserName.remove();
             }
-            loginIcon.style.display = 'block';
-            return;
-        }
-
-        // Si hay usuario logueado
-        const userData = JSON.parse(userDataStr);
-        console.log('Datos del usuario:', userData);
-        
-        loginIcon.style.display = 'none';
-        
-        const existingUserName = loginContainer.querySelector('.user-name');
-        if (existingUserName) {
-            existingUserName.remove();
-        }
-        
-        const userNameElement = document.createElement('span');
-        userNameElement.textContent = `${userData.userName} (${userData.soulsCoin} 🪙)`;
-        userNameElement.className = 'user-name';
-        loginContainer.insertBefore(userNameElement, loginIcon);
-        
-        loginForm.classList.add('hidden');
-        if (logoutButton) {
+            
+            // Crear y mostrar el nombre de usuario
+            const userNameElement = document.createElement('span');
+            userNameElement.textContent = userData.userName;
+            userNameElement.className = 'user-name';
+            loginContainer.insertBefore(userNameElement, loginIcon);
+            
+            // Ocultar el formulario y mostrar el botón de logout
+            if (document.querySelector('form')) {
+                document.querySelector('form').style.display = 'none';
+            }
             logoutButton.style.display = 'block';
         }
     }
 
+    // Verificar estado de login al cargar la página
     updateUIFromLoginState();
 
-    // Función para encriptar contraseña usando Web Crypto API
+    // Manejar la visibilidad del nombre de usuario cuando el menú se despliega/cierra
+    loginContainer.addEventListener('click', function() {
+        const userNameElement = loginContainer.querySelector('.user-name');
+        if (userNameElement) {
+            if (loginContainer.classList.contains('expanded')) {
+                userNameElement.style.display = 'none';
+            } else {
+                userNameElement.style.display = 'block';
+            }
+        }
+    });
+
     async function encryptPassword(password) {
         const encoder = new TextEncoder();
         const data = encoder.encode(password);
@@ -59,22 +66,28 @@ document.addEventListener('DOMContentLoaded', async function() {
         return hashHex;
     }
 
+    // Función para manejar el logout
     function handleLogout() {
+        console.log('Cerrando sesión...');
+        
+        // Limpiar localStorage
         localStorage.removeItem('userData');
+        
+        // Mostrar mensaje de cierre de sesión
         loginMessage.textContent = 'Sesión cerrada correctamente';
         loginMessage.className = 'message success';
-        setTimeout(() => location.reload(), 1000);
+        
+        // Recargar la página después de un breve delay para mostrar el mensaje
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
+
+        console.log('Sesión cerrada exitosamente');
     }
 
-    if (logoutButton) {
-        logoutButton.addEventListener('click', handleLogout);
-        // Ocultar el botón de cerrar sesión inicialmente si no hay sesión
-        if (!localStorage.getItem('userData')) {
-            logoutButton.style.display = 'none';
-        }
-    }
+    // Agregar evento al botón de logout
+    logoutButton.addEventListener('click', handleLogout);
 
-    // Probar la conexión con la API al cargar
     try {
         const testResponse = await fetch('https://localhost:7249/api/User');
         if (!testResponse.ok) {
@@ -97,7 +110,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         console.log('Intentando login con email:', email);
 
-        // Limpiar mensajes anteriores
         loginMessage.textContent = '';
         loginMessage.className = 'message';
 
@@ -113,56 +125,54 @@ document.addEventListener('DOMContentLoaded', async function() {
         submitButton.textContent = 'Iniciando sesión...';
 
         try {
-            // Obtener todos los usuarios
             const getUsersResponse = await fetch('https://localhost:7249/api/User');
             if (!getUsersResponse.ok) {
                 throw new Error('Error al obtener datos de usuarios');
             }
 
             const users = await getUsersResponse.json();
-            console.log('Usuarios disponibles:', users);
-
-            // Buscar el usuario que coincida con email
-            const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+            const user = users.find(u => u.email === email);
             
             if (user) {
                 console.log('Usuario encontrado:', user);
                 
-                // Intentar primero con contraseña sin encriptar
                 let isValidPassword = password === user.password;
                 
-                // Si no coincide, intentar con contraseña encriptada
                 if (!isValidPassword) {
                     const hashedPassword = await encryptPassword(password);
                     isValidPassword = hashedPassword.substring(0, user.password.length) === user.password;
                 }
 
                 if (isValidPassword) {
-                    const userData = {
-                        userId: user.id,
+                    // Guardar datos del usuario en localStorage
+                    localStorage.setItem('userData', JSON.stringify({
                         userName: user.userName,
-                        email: user.email,
-                        soulsCoin: user.soulsCoin || 0
-                    };
+                        email: user.email
+                    }));
+
+                    // Ocultar la imagen y mostrar el nombre del usuario
+                    loginIcon.style.display = 'none';
+                    const userNameElement = document.createElement('span');
+                    userNameElement.textContent = user.userName;
+                    userNameElement.className = 'user-name';
+                    loginContainer.insertBefore(userNameElement, loginIcon);
                     
-                    console.log('Guardando datos de usuario:', userData);
-                    localStorage.setItem('userData', JSON.stringify(userData));
+                    // Ocultar el formulario de login
+                    document.querySelector('form').style.display = 'none';
                     
-                    loginMessage.textContent = `¡Bienvenido ${user.userName}!`;
-                    loginMessage.classList.add('success');
+                    // Mostrar el botón de logout
+                    logoutButton.style.display = 'block';
                     
-                    // Actualizar UI
-                    updateUIFromLoginState();
+                    // Cerrar el menú desplegable
                     loginContainer.classList.remove('expanded');
                     loginForm.classList.add('hidden');
                     
-                    console.log('Login exitoso. Datos del usuario:', {
-                        nombre: user.userName,
-                        rango: user.rankName,
-                        monedas: user.soulsCoin
-                    });
+                    loginMessage.textContent = `¡Bienvenido ${user.userName}!`;
+                    loginMessage.classList.add('success');
+
+                    console.log('Login exitoso para el usuario:', user.userName);
                 } else {
-                    loginMessage.textContent = 'Contraseña incorrecta.';
+                    loginMessage.textContent = 'Usuario o contraseña incorrectos.';
                     loginMessage.classList.add('error');
                 }
             } else {
@@ -177,42 +187,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         } finally {
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
-        }
-    });
-
-    // Manejar el clic en el icono de login
-    loginIcon.addEventListener('click', function(e) {
-        e.stopPropagation();
-        loginContainer.classList.toggle('expanded');
-        if (loginContainer.classList.contains('expanded')) {
-            loginForm.classList.remove('hidden');
-            if (logoutButton) {
-                logoutButton.style.display = 'none';
-            }
-            loginIcon.style.display = 'none';
-        } else {
-            loginForm.classList.add('hidden');
-            const userDataStr = localStorage.getItem('userData');
-            if (userDataStr && logoutButton) {
-                logoutButton.style.display = 'block';
-            }
-        }
-    });
-
-    // Evitar que los clics dentro del formulario cierren el contenedor
-    loginForm.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-
-    // Cerrar el formulario cuando se hace clic fuera
-    document.addEventListener('click', function(e) {
-        if (!loginContainer.contains(e.target)) {
-            loginContainer.classList.remove('expanded');
-            loginForm.classList.add('hidden');
-            const userDataStr = localStorage.getItem('userData');
-            if (userDataStr && logoutButton) {
-                logoutButton.style.display = 'block';
-            }
         }
     });
 });

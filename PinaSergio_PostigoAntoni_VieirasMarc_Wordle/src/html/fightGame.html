@@ -1,89 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dark Souls Arena</title>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/GameStyles.css">
-</head>
-<body>
-    <button onclick="location.href='/index.html'" class="back-button">Volver a Inicio</button>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/GameStyles.css" />
+  </head>
+  <body>
+    <button onclick="location.href='/index.html'" class="back-button">
+      Volver a Inicio
+    </button>
 
     <div class="game-container form-container">
+      <h1>DARK SOULS ARENA</h1>
 
-        <h1>DARK SOULS ARENA</h1>
-        
-        <!-- Combat Area -->
-        <div class="combat-area">
-            <div class="player character">
-                <img src="" alt="Player Character">
+      <!-- Combat Area -->
+      <div class="combat-area">
+        <div class="player character">
+          <img src="" alt="Player Character" />
+        </div>
+        <div class="enemy character">
+          <img src="" alt="Enemy Character" />
+        </div>
+      </div>
+
+      <!-- Status Bars -->
+      <div class="status-bars">
+        <div class="player-status">
+          <div class="bar-container">
+            <i data-lucide="shield"></i>
+            <div class="health-bar">
+              <div id="playerHealthBar" class="bar-fill"></div>
             </div>
-            <div class="enemy character">
-                <img src="" alt="Enemy Character">
+            <span id="playerHealthText">100</span>
+          </div>
+          <div class="bar-container">
+            <i data-lucide="flame"></i>
+            <div class="energy-bar">
+              <div id="playerEnergyBar" class="bar-fill"></div>
             </div>
+            <span id="playerEnergyText">0</span>
+          </div>
         </div>
 
-        <!-- Status Bars -->
-        <div class="status-bars">
-            <div class="player-status">
-                <div class="bar-container">
-                    <i data-lucide="shield"></i>
-                    <div class="health-bar">
-                        <div id="playerHealthBar" class="bar-fill"></div>
-                    </div>
-                    <span id="playerHealthText">100</span>
-                </div>
-                <div class="bar-container">
-                    <i data-lucide="flame"></i>
-                    <div class="energy-bar">
-                        <div id="playerEnergyBar" class="bar-fill"></div>
-                    </div>
-                    <span id="playerEnergyText">0</span>
-                </div>
+        <div class="enemy-status">
+          <div class="bar-container">
+            <i data-lucide="shield"></i>
+            <div class="health-bar">
+              <div id="enemyHealthBar" class="bar-fill"></div>
             </div>
-
-            <div class="enemy-status">
-                <div class="bar-container">
-                    <i data-lucide="shield"></i>
-                    <div class="health-bar">
-                        <div id="enemyHealthBar" class="bar-fill"></div>
-                    </div>
-                    <span id="enemyHealthText">100</span>
-                </div>
-            </div>
+            <span id="enemyHealthText">100</span>
+          </div>
         </div>
+      </div>
 
-        <!-- Combo Counter -->
-        <div id="comboCounter" class="combo-counter hidden">
-            COMBO x1
-        </div>
+      <!-- Combo Counter -->
+      <div id="comboCounter" class="combo-counter hidden">COMBO x1</div>
 
-        <!-- Messages -->
-        <div id="messageArea" class="message-area"></div>
+      <!-- Messages -->
+      <div id="messageArea" class="message-area"></div>
 
-        <!-- Controls -->
-        <div class="controls">
-            <button onclick="performAttack('normal')" class="form-button">
-                <i data-lucide="sword"></i>
-                Estocada
-            </button>
-            <button onclick="performAttack('special')" class="form-button" id="specialAttack">
-                <i data-lucide="zap"></i>
-                Golpe de Alma
-            </button>
-            <button onclick="performAttack('ultra')" class="form-button ultra" id="ultraAttack">
-                <i data-lucide="flame"></i>
-                IRA DE LOS DIOSES
-            </button>
-        </div>
-
-        <!-- Restart Button -->
-        <button onclick="restart()" id="restartBtn" class="form-button hidden">
-            REKINDLE THE FLAME
+      <!-- Controls -->
+      <div class="controls">
+        <button onclick="performAttack('normal')" class="form-button">
+          <i data-lucide="sword"></i>
+          Estocada
         </button>
+        <button
+          onclick="performAttack('special')"
+          class="form-button"
+          id="specialAttack"
+        >
+          <i data-lucide="zap"></i>
+          Golpe de Alma
+        </button>
+        <button
+          onclick="performAttack('ultra')"
+          class="form-button ultra"
+          id="ultraAttack"
+        >
+          <i data-lucide="flame"></i>
+          IRA DE LOS DIOSES
+        </button>
+      </div>
+
+      <!-- Restart Button -->
+      <button onclick="restart()" id="restartBtn" class="form-button hidden">
+        REKINDLE THE FLAME
+      </button>
     </div>
     <script src="../fightGame.js"></script>
-</body>
+
+    <!-- Primero cargamos el menú -->
+    <script src="../menu.js"></script>
+    <!-- Después cargamos el login -->
+    <script src="../../login.js"></script>
+  </body>
 </html>
