@@ -19,7 +19,6 @@ async function updateCoins(userId, newCoinAmount) {
 
     const responseData = await response.json();
 
-    // Verificar si la respuesta contiene datos
     if (responseData && responseData.userId && responseData.soulsCoin !== undefined) {
       console.log('Monedas actualizadas correctamente:', responseData);
     } else {
@@ -48,11 +47,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   const input = document.getElementById("inputGuess");
   const datalist = document.getElementById("characterList");
 
-  // Espera a que se carguen los personajes y el objetivo
   await fetchTargetCharacter();
   const characters = await fetchCharacters();
 
-  // Ahora puedes manejar la lógica de la UI
   input.addEventListener("input", () => {
     const inputValue = input.value.trim().toLowerCase();
     datalist.innerHTML = "";
@@ -87,47 +84,52 @@ window.addEventListener("DOMContentLoaded", async () => {
         <div class="pista-item">
           <img src="${guess.characterIcon}" alt="${guess.name}" class="character-icon">
         </div>
-
-        <div class="${feedback[1]}">${guess.gender}</div>
-        <div class="${feedback[2]}">${guess.game}</div>
-        <div class="${feedback[3]}">${guess.origin}</div>
-        <div class="${feedback[4]}">${guess.race}</div>
-        <div class="${feedback[5]}">${guess.type}</div>
+        <div class="${feedback[1]} text-white">${guess.gender}</div>
+        <div class="${feedback[2]} text-white">${guess.game}</div>
+        <div class="${feedback[3]} text-white">${guess.origin}</div>
+        <div class="${feedback[4]} text-white">${guess.race}</div>
+        <div class="${feedback[5]} text-white">${guess.type}</div>
       `;
 
-      // Insertar el nuevo intento en la parte superior
       pistasDiv.insertBefore(row, pistasDiv.firstChild);
 
-      // Aplicar la animación fade-in al último intento
       setTimeout(() => {
         row.classList.add("fade-in");
-      }, 1); // Un pequeño retraso para que la animación funcione correctamente
+      }, 1);
 
       if (feedback.every((color) => color === "green")) {
-        // Mostrar mensaje de victoria
         const victoryMessage = document.getElementById("victoryMessage");
-        const attemptsCount = document.getElementById("attemptsCount");
-        attemptsCount.textContent = getAttempts();
+        const messageContent = document.createElement('div');
+        messageContent.classList.add('text-white'); // Añadir clase text-white al contenedor
+        messageContent.innerHTML = `
+          <h2 style="color: white !important;">¡Correcto! Has adivinado al personaje en ${getAttempts()} ${getAttempts() === 1 ? 'intento' : 'intentos'}.</h2>
+          <button id="closeVictoryMessage" class="close-button text-white">Cerrar</button>
+          <p style="color: white !important;">¡Has ganado 10 almas!</p>
+        `;
+        
+        // Limpiar contenido anterior y agregar el nuevo
+        victoryMessage.innerHTML = '';
+        victoryMessage.appendChild(messageContent);
         victoryMessage.classList.remove("hidden");
 
-        // Obtener el usuario desde localStorage
+        // Agregar el evento de cierre después de crear el botón
+        document.getElementById("closeVictoryMessage").addEventListener("click", () => {
+          victoryMessage.classList.add("hidden");
+          // Recargar la página después de cerrar el mensaje
+          location.reload();
+        });
+
         const userData = JSON.parse(localStorage.getItem('userData'));
 
         if (userData) {
-          // Sumar 10 monedas
           const newCoinAmount = (userData.soulsCoin || 0) + 10;
-
-          // Actualizar las monedas en localStorage
           userData.soulsCoin = newCoinAmount;
           localStorage.setItem('userData', JSON.stringify(userData));
-
-          // También actualizamos las monedas en la base de datos
           updateCoins(userData.userId, newCoinAmount);
         } else {
           console.error("No se encontró el usuario en localStorage");
         }
 
-        // Deshabilitar el botón después de ganar
         document.getElementById("submitGuess").disabled = true;
         document.getElementById("giveHint").disabled = true;
       }
@@ -138,13 +140,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("inputGuess").value = "";
   });
 
-  // Cerrar el mensaje de victoria
-  document.getElementById("closeVictoryMessage").addEventListener("click", () => {
-    const victoryMessage = document.getElementById("victoryMessage");
-    victoryMessage.classList.add("hidden");
-  });
-
-  // Botón de pista adicional
   document.getElementById("giveHint").addEventListener("click", () => {
     const hints = [
       `Pertenece al juego: ${getTarget().game}`,
@@ -155,11 +150,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
-// Función para reiniciar el juego
 function resetGame() {
   document.getElementById("inputGuess").value = '';
   document.getElementById("submitGuess").disabled = false;
   document.getElementById("giveHint").disabled = false;
   document.getElementById("pistas").innerHTML = '';
-  // Restablecer intentos y cualquier otro estado necesario
 }
