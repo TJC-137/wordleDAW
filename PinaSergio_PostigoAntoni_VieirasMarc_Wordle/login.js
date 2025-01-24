@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 if (isValidPassword) {
                     const userData = {
-                        userId: user.id,
+                        userId: user.userId,
                         userName: user.userName,
                         email: user.email,
                         soulsCoin: user.soulsCoin || 0
