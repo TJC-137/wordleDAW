@@ -3,6 +3,7 @@
 Desarrollado por Tomeu J. Colom, Sergio Pina, Toni Postigo, Ramon Riera y Marc Vieiras.
 Este proyecto es un juego tipo "Wordle" basado en las obras de Hidetaka Miyazaki y ha sido desarrollado con fines académicos, bajo ningún concepto pretendemos lucrarnos con esta aplicación.
 
+Importante: Para pruebas, en la consola del navegador se encuentran las respuestas de los minijuegos, se ha hecho intencionalmente de esta manera para probar rápidamente el funcionamiento de la aplicación.
 
 Vamos a detallar aquí instrucciones para descargar y desplegar el proyecto en local.
 
