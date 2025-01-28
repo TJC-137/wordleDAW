@@ -1,7 +1,8 @@
 ### Instrucciones para descargar el proyecto
 
-Este proyecto es un juego tipo "Wordle" basado en las obras de Hidetaka Miyazaki y ha sido desarrollado con fines académicos, bajo ningún concepto pretendemos lucrarnos con esta aplicación.
 Desarrollado por Tomeu J. Colom, Sergio Pina, Toni Postigo, Ramon Riera y Marc Vieiras.
+Este proyecto es un juego tipo "Wordle" basado en las obras de Hidetaka Miyazaki y ha sido desarrollado con fines académicos, bajo ningún concepto pretendemos lucrarnos con esta aplicación.
+
 
 Vamos a detallar aquí instrucciones para descargar y desplegar el proyecto en local.
 
